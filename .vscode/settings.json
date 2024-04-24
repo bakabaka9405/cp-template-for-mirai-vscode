@@ -1,0 +1,59 @@
+{
+	"files.exclude": {
+		"**/.cache": true,
+		"**/.xmake": true,
+		"build": true
+	},
+	"[cpp]": {
+		"editor.defaultFormatter": "xaver.clang-format"
+	},
+	"clangd.arguments": [
+		"--background-index",
+		"--compile-commands-dir=.vscode",
+		"--header-insertion=never",
+		"-j=4",
+		"--clang-tidy",
+		"--pch-storage=memory",
+		"--pretty",
+		"--query-driver=C:/Tools/mingw64/bin/gcc.exe"
+	],
+	"mirai-vscode.generate_compile_commands": true,
+	"mirai-vscode.test_presets": [
+		{
+			"name": "GCC 13",
+			"description": "喵喵喵",
+			"compilerPath": "g++",
+			"additionalIncludePaths": [
+				"include"
+			],
+			"additionalArgs": [
+				"-Wall",
+				"-DMR_LOCAL",
+				"-Wl,--stack=268435456"
+			],
+			"std": "c++23",
+			"optimization": "O2"
+		},
+		{
+			"name": "Clang 17",
+			"description": "汪汪汪",
+			"compilerPath": "C:\\Tools\\llvm-mingw-20230919-msvcrt-x86_64\\bin\\clang++.exe",
+			"additionalIncludePaths": [
+				"include"
+			],
+			"std": "c++20",
+			"additionalArgs": [
+				"-Wall",
+				"-fsanitize=address,undefined,signed-integer-overflow",
+				"-pipe",
+				"-DMR_DEBUG",
+				"-DMR_LOCAL",
+				"-Wl,--stack=268435456"
+			],
+			"mixStdoutStderr": true
+		}
+	],
+	"mirai-vscode.build_base_dir": "/build",
+	"mirai-vscode.src_base_dir": "/src",
+	"mirai-vscode.compile_commands_path": ".vscode",
+}
